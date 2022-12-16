@@ -2,11 +2,19 @@
 
 public class Character
 {
+    public static string PlayerName = "Thrud";
+
     private string _name;
     private int _hp = 100;
     private int _exp;
 
     private Actor _actor;
+
+    static Character()
+    {
+        Console.WriteLine("Static Constructor");
+        PlayerName = "Freya";
+    }
 
     public string Name
     {
@@ -63,5 +71,23 @@ public class Character
     public void ChangeName(string newName)
     {
         _name = newName;
+    }
+
+    public void SetPlayer()
+    {
+        PlayerName = Name;
+    }
+
+    public void PrintPlayerName()
+    {
+        Console.WriteLine(PlayerName);
+    }
+
+    public static void CallAllTest()
+    {
+        Console.WriteLine("Call all example for Character");
+        Day3Test.Example1();
+        Day3Test.Example2();
+        Console.WriteLine(PlayerName);
     }
 }
