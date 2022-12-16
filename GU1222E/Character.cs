@@ -3,7 +3,6 @@
 public class Character
 {
     private string _name;
-
     private int _hp = 100;
     private int _exp;
 
@@ -11,8 +10,8 @@ public class Character
 
     public string Name
     {
-        get { return _name; }
-        private set { _name = value; }
+        get => _name;
+        set => _name = value;
     }
 
     public int Hp

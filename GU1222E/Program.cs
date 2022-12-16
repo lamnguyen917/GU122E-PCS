@@ -26,17 +26,17 @@ namespace GU1222E
         {
             Character atreus = new Character("Atreus");
             Console.WriteLine(atreus.Name);
+            atreus.PrintInfo();
+            atreus.Name = "Loki";
             Console.WriteLine(atreus.Name);
-            atreus.PrintInfo();
-
-            atreus.Hp = -100;
-            atreus.PrintInfo();
-            
-            atreus.Hp = 500;
-            atreus.PrintInfo();
-
-            atreus.Hp = 50;
-            atreus.PrintInfo();
+            // atreus.Hp = -100;
+            // atreus.PrintInfo();
+            //
+            // atreus.Hp = 500;
+            // atreus.PrintInfo();
+            //
+            // atreus.Hp = 50;
+            // atreus.PrintInfo();
         }
 
         public static void Main(string[] args)
