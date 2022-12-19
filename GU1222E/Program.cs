@@ -6,7 +6,9 @@ namespace GU1222E
     {
         public static void Main(string[] args)
         {
-            Day3Test.All();
+            // Day3Test.Run();
+            // FunctionDemo.RunTest();
+            Day4Test.Run();
         }
     }
 }

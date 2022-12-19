@@ -53,7 +53,7 @@ public static class Day3Test
         odin.PrintPlayerName();
     }
 
-    public static void All()
+    public static void Run()
     {
         Example1();
         Example2();

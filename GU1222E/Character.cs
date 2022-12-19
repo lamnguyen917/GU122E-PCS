@@ -6,9 +6,9 @@ public class Character
 
     private string _name;
     private int _hp = 100;
-    private int _exp;
+    protected int _exp;
 
-    private Actor _actor;
+    // private Actor _actor;
 
     static Character()
     {
@@ -24,7 +24,7 @@ public class Character
 
     public int Hp
     {
-        get { return _hp; }
+        get => _hp;
         set
         {
             if (value < 0)
@@ -34,6 +34,11 @@ public class Character
             else
                 _hp = value;
         }
+    }
+
+    protected virtual bool IsDead()
+    {
+        return _hp <= 0;
     }
 
     public Character()
@@ -59,7 +64,7 @@ public class Character
         // Exp += amount;
     }
 
-    public void PrintInfo()
+    public virtual void PrintInfo()
     {
         Console.WriteLine("=============================");
         Console.WriteLine($"Name: {_name}");
@@ -89,5 +94,25 @@ public class Character
         Day3Test.Example1();
         Day3Test.Example2();
         Console.WriteLine(PlayerName);
+    }
+
+    public void Attack()
+    {
+    }
+
+    public void CheckThis(string _name)
+    {
+        // this._name = _name;
+        Console.WriteLine(_name);
+        Console.WriteLine(this._name);
+
+        int _exp = 10000000;
+        Console.WriteLine(_exp);
+        Console.WriteLine(this._exp);
+    }
+
+    public void Damage(int amount)
+    {
+        _hp -= amount;
     }
 }
