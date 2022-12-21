@@ -1,6 +1,6 @@
 ﻿namespace GU1222E;
 
-public class Wizard : Character
+public class Wizard : Character, ICanCastSpell
 {
     private int _mana = 100;
 
@@ -20,6 +20,13 @@ public class Wizard : Character
         base.PrintInfo();
         Console.WriteLine("*****************************************");
     }
+
+    public override void Attack(Character target)
+    {
+        Console.WriteLine($"{Name} use a staff to attack {target.Name}");
+    }
+
+    public override string ClassName => "Pháp sư";
 
     public override void PrintInfo()
     {

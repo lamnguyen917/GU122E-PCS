@@ -1,12 +1,15 @@
 ﻿namespace GU1222E;
 
-public class Character
+public abstract class Character
 {
     public static string PlayerName = "Thrud";
 
     private string _name;
     private int _hp = 100;
     protected int _exp;
+
+    public abstract void Attack(Character target);
+    public abstract string ClassName { get; }
 
     // private Actor _actor;
 
@@ -67,6 +70,7 @@ public class Character
     public virtual void PrintInfo()
     {
         Console.WriteLine("=============================");
+        Console.WriteLine($"Class: {ClassName}");
         Console.WriteLine($"Name: {_name}");
         Console.WriteLine($"Current HP: {_hp}");
         Console.WriteLine($"Current Exp: {_exp}");
@@ -96,9 +100,6 @@ public class Character
         Console.WriteLine(PlayerName);
     }
 
-    public void Attack()
-    {
-    }
 
     public void CheckThis(string _name)
     {
@@ -114,5 +115,15 @@ public class Character
     public void Damage(int amount)
     {
         _hp -= amount;
+    }
+
+    public void PrintClassName()
+    {
+        Console.WriteLine($"Nhân vật của tôi là {ClassName}");
+    }
+
+    public void Attack(IDefensable target)
+    {
+        Console.WriteLine($"{Name} attack a target but he is defending so it no use");
     }
 }
