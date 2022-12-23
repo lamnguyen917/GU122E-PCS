@@ -6,6 +6,7 @@ public abstract class Character
 
     private string _name;
     private int _hp = 100;
+    private int _maxMaxHp = 100;
     protected int _exp;
 
     public abstract void Attack(Character target);
@@ -54,17 +55,31 @@ public abstract class Character
         _name = name;
     }
 
-    public Character(string name, int hp, int exp)
+    public Character(string name, int maxHp, int exp)
     {
         _name = name;
-        _hp = hp;
+        _maxMaxHp = maxHp;
         _exp = exp;
     }
 
     public void GainExp(int amount)
     {
+        if (amount > 1000000)
+        {
+            throw new HackCheatException("Exp", amount);
+        }
+
+        if (amount == -10)
+        {
+            throw new Exception("Mình thích thì mình bắt lỗi thôi, không cho tăng điểm kinh nghiệm");
+        }
+
+        if (amount < 0)
+        {
+            throw new InvalidOperationException("Giá trị không hợp lệ");
+        }
+
         _exp += amount;
-        // Exp += amount;
     }
 
     public virtual void PrintInfo()
@@ -73,6 +88,7 @@ public abstract class Character
         Console.WriteLine($"Class: {ClassName}");
         Console.WriteLine($"Name: {_name}");
         Console.WriteLine($"Current HP: {_hp}");
+        Console.WriteLine($"Current Max HP: {_maxMaxHp}");
         Console.WriteLine($"Current Exp: {_exp}");
         Console.WriteLine("=============================");
     }
@@ -125,5 +141,17 @@ public abstract class Character
     public void Attack(IDefensable target)
     {
         Console.WriteLine($"{Name} attack a target but he is defending so it no use");
+    }
+
+    public int GetHpPercent()
+    {
+        return (_hp * 100) / _maxMaxHp;
+    }
+
+    public void HackCheatPenalty()
+    {
+        _hp = 0;
+        _maxMaxHp = 0;
+        _exp = 0;
     }
 }

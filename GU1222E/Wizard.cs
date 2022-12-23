@@ -10,7 +10,7 @@ public class Wizard : Character, ICanCastSpell
     {
     }
 
-    public Wizard(string name, int hp, int exp) : base(name, hp, exp)
+    public Wizard(string name, int maxHp, int exp) : base(name, maxHp, exp)
     {
     }
 

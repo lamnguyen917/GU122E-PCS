@@ -11,7 +11,8 @@ namespace GU1222E
             Console.OutputEncoding = Encoding.UTF8;
             // Day3Test.Run();
             // FunctionDemo.RunTest();
-            Day4Test.Run();
+            // Day4Test.Run();
+            Day5.Run();
         }
     }
 }
