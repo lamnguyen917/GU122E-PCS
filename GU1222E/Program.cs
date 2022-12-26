@@ -12,7 +12,8 @@ namespace GU1222E
             // Day3Test.Run();
             // FunctionDemo.RunTest();
             // Day4Test.Run();
-            Day5.Run();
+            // Day5.Run();
+            Day6.Run();
         }
     }
 }

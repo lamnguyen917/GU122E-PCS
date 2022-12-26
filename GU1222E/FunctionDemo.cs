@@ -4,13 +4,13 @@ public class FunctionDemo
 {
     static void MoveChess(ref Chess chess, int x, int y)
     {
-        chess.X = x;
-        chess.Y = y;
+        chess.Position.X = x;
+        chess.Position.Y = y;
     }
 
     static void PrintChessInfo(Chess chess)
     {
-        Console.WriteLine($"{chess.X} - {chess.Y}");
+        Console.WriteLine($"{chess.Position.X} - {chess.Position.Y}");
     }
 
     public static void RunTest()
